@@ -11,24 +11,25 @@ var operators_1 = require("rxjs/internal/operators");
 var http_1 = require("@angular/common/http");
 var rxjs_1 = require("rxjs");
 var operators_2 = require("rxjs/operators");
-var apiUrl = 'https://myflix-app-2021.netlify.app/';
+var apiUrl = 'https://myflix-app-2021.herokuapp.com/';
 var UserRegistrationService = /** @class */ (function () {
     function UserRegistrationService(http) {
         this.http = http;
     }
     UserRegistrationService.prototype.userRegistration = function (userDetails) {
         console.log(userDetails);
-        return this.http.post(apiUrl + 'users', userDetails).pipe(operators_1.catchError(this.handleError));
+        return this.http
+            .post(apiUrl + 'users', userDetails)
+            .pipe(operators_1.catchError(this.handleError));
     };
     UserRegistrationService.prototype.handleError = function (error) {
         if (error.error instanceof ErrorEvent) {
             console.error('Some error occurred:', error.error.message);
         }
         else {
-            console.error("Error Status code " + error.status + ", " +
-                ("Error body is: " + error.error));
+            console.error("Error Status code " + error.status + "," + ("Error body is: " + error.error));
         }
-        return rxjs_1.throwError('Something bad happened; please try again later.');
+        return rxjs_1.throwError('Something went wrong - please try again later!');
     };
     // User login
     UserRegistrationService.prototype.userLogin = function (userDetails) {
@@ -49,10 +50,13 @@ var UserRegistrationService = /** @class */ (function () {
     // Get all movies
     UserRegistrationService.prototype.getAllMovies = function () {
         var token = localStorage.getItem('token');
-        return this.http.get(apiUrl + 'movies', { headers: new http_1.HttpHeaders({
+        return this.http
+            .get(apiUrl + 'movies', {
+            headers: new http_1.HttpHeaders({
                 Authorization: 'Bearer ' + token
             })
-        }).pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.handleError));
+        })
+            .pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.handleError));
     };
     // Non-typed response extraction
     UserRegistrationService.prototype.extractResponseData = function (res) {
@@ -62,11 +66,13 @@ var UserRegistrationService = /** @class */ (function () {
     // Get movie by title
     UserRegistrationService.prototype.getMovieByTitle = function () {
         var token = localStorage.getItem('token');
-        return this.http.get(apiUrl + 'movies/:Title', {
+        return this.http
+            .get(apiUrl + 'movies/:Title', {
             headers: new http_1.HttpHeaders({
                 Authorization: 'Bearer ' + token
             })
-        }).pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.getMovieByTitleHandleError));
+        })
+            .pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.getMovieByTitleHandleError));
     };
     UserRegistrationService.prototype.getMovieByTitleHandleError = function (error) {
         if (error.error instanceof ErrorEvent) {
@@ -80,11 +86,13 @@ var UserRegistrationService = /** @class */ (function () {
     // Get director
     UserRegistrationService.prototype.getDirector = function () {
         var token = localStorage.getItem('token');
-        return this.http.get(apiUrl + 'movies/directors/:Name', {
+        return this.http
+            .get(apiUrl + 'movies/directors/:Name', {
             headers: new http_1.HttpHeaders({
                 Authorization: 'Bearer ' + token
             })
-        }).pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.getDirectorHandleError));
+        })
+            .pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.getDirectorHandleError));
     };
     UserRegistrationService.prototype.getDirectorHandleError = function (error) {
         if (error.error instanceof ErrorEvent) {
@@ -98,11 +106,13 @@ var UserRegistrationService = /** @class */ (function () {
     // Get genre
     UserRegistrationService.prototype.getGenre = function () {
         var token = localStorage.getItem('token');
-        return this.http.get(apiUrl + 'movies/genres/:Name', {
+        return this.http
+            .get(apiUrl + 'movies/genres/:Name', {
             headers: new http_1.HttpHeaders({
                 Authorization: 'Bearer ' + token
             })
-        }).pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.getGenreHandleError));
+        })
+            .pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.getGenreHandleError));
     };
     UserRegistrationService.prototype.getGenreHandleError = function (error) {
         if (error.error instanceof ErrorEvent) {
@@ -137,11 +147,13 @@ var UserRegistrationService = /** @class */ (function () {
     UserRegistrationService.prototype.getFavorite = function (id) {
         var token = localStorage.getItem('token');
         var user = localStorage.getItem('user');
-        return this.http.get(apiUrl + ("users/" + user + "/favorites/" + id), id, {
+        return this.http
+            .get(apiUrl + ("users/" + user + "/favorites/" + id), {
             headers: new http_1.HttpHeaders({
                 Authorization: 'Bearer ' + token
             })
-        }).pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.addFavoriteHandleError));
+        })
+            .pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.addFavoriteHandleError));
     };
     UserRegistrationService.prototype.getFavoriteHandleError = function (error) {
         if (error.error instanceof ErrorEvent) {
@@ -156,11 +168,13 @@ var UserRegistrationService = /** @class */ (function () {
     UserRegistrationService.prototype.addFavorite = function (id) {
         var token = localStorage.getItem('token');
         var user = localStorage.getItem('user');
-        return this.http.post(apiUrl + ("users/" + user + "/favorites/" + id), id, {
+        return this.http
+            .post(apiUrl + ("users/" + user + "/favorites/" + id), id, {
             headers: new http_1.HttpHeaders({
                 Authorization: 'Bearer ' + token
             })
-        }).pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.addFavoriteHandleError));
+        })
+            .pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.addFavoriteHandleError));
     };
     UserRegistrationService.prototype.addFavoriteHandleError = function (error) {
         if (error.error instanceof ErrorEvent) {
@@ -175,11 +189,13 @@ var UserRegistrationService = /** @class */ (function () {
     UserRegistrationService.prototype.updateUser = function (userDetails) {
         var token = localStorage.getItem('token');
         var user = localStorage.getItem('user');
-        return this.http.put(apiUrl + ("users/" + user), userDetails, {
+        return this.http
+            .put(apiUrl + ("users/" + user), userDetails, {
             headers: new http_1.HttpHeaders({
                 Authorization: 'Bearer ' + token
             })
-        }).pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.editUserHandleError));
+        })
+            .pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.editUserHandleError));
     };
     UserRegistrationService.prototype.editUserHandleError = function (error) {
         if (error.error instanceof ErrorEvent) {
@@ -198,7 +214,8 @@ var UserRegistrationService = /** @class */ (function () {
             headers: new http_1.HttpHeaders({
                 Authorization: 'Bearer ' + token
             })
-        }).pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.deleteUserHandleError));
+        })
+            .pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.deleteUserHandleError));
     };
     UserRegistrationService.prototype.deleteUserHandleError = function (error) {
         if (error.error instanceof ErrorEvent) {
@@ -217,7 +234,8 @@ var UserRegistrationService = /** @class */ (function () {
             headers: new http_1.HttpHeaders({
                 Authorization: 'Bearer ' + token
             })
-        }).pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.removeFavoriteHandleError));
+        })
+            .pipe(operators_2.map(this.extractResponseData), operators_1.catchError(this.removeFavoriteHandleError));
     };
     UserRegistrationService.prototype.removeFavoriteHandleError = function (error) {
         if (error.error instanceof ErrorEvent) {
