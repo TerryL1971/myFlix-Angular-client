@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { GetAllMoviesService } from '../fetch-api-data.service';
 
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
@@ -8,7 +11,12 @@ import { GetAllMoviesService } from '../fetch-api-data.service';
 })
 export class MovieCardComponent {
   movies: any[] = [];
-  constructor(public fetchApiData: GetAllMoviesService) { }
+
+constructor(
+  public fetchApiData: GetAllMoviesService,
+  public dialog: MatDialog,
+  public snackBar: MatSnackBar
+) { }
 
 ngOnInit(): void {
   this.getMovies();
