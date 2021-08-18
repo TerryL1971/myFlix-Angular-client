@@ -8,7 +8,7 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-const apiUrl = 'https://myflix-app-2021.herokuapp.com/movies';
+const apiUrl = 'https://myflix-app-2021.herokuapp.com/';
 
 @Injectable({
   providedIn: 'root',
