@@ -5,8 +5,12 @@
   <div style="padding: 20px; text-align: center;">
       <h1>{{user.Username}}'s Profile</h1>
 
-      <button mat-raised-button (click)="openUserUpdateDialog()" style="margin: 10px;" color="primary">
-          Update Profile
+      <button mat-raised-button
+      (click)="openUserUpdateDialog()"  
+      color="primary"
+      style="margin: 10px;" 
+      >
+        Update Profile
       </button>
   </div>
 
@@ -31,7 +35,9 @@
         </mat-card-subtitle>
 
         <mat-card-actions class="remove">
-          <button class="material-icons round" (click)='deleteFavorite(favorite._id)'>
+          <button class="material-icons remove" 
+          (click)='deleteFavorite(favorite._id)'
+          >
             <span>remove</span>
           </button>
         </mat-card-actions>
@@ -42,7 +48,7 @@
 
   <div style="padding: 20px; text-align: center;">
       <h2>DELETE {{user.Username}}'s Profile</h2>
-      <button mat-raised-button (click)="deleteUserAccount()" style="margin: 10px;" color="primary">
+      <button mat-raised-button (click)="deleteUserAccount()" style="margin: 10px;" color="warn">
           DELETE PROFILE
       </button>
   </div>
