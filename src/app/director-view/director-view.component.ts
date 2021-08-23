@@ -7,15 +7,12 @@ import { Router } from '@angular/router';
 
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-
 @Component({
   selector: 'app-director-view',
   templateUrl: './director-view.component.html',
-  styleUrls: ['./director-view.component.scss']
+  styleUrls: ['./director-view.component.scss'],
 })
 export class DirectorViewComponent implements OnInit {
-
-
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public director: {
@@ -23,9 +20,7 @@ export class DirectorViewComponent implements OnInit {
       bio: string;
       image: string;
     }
-  ) { }
+  ) {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
