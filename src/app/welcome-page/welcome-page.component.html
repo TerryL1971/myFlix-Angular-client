@@ -1,21 +1,37 @@
 <div class="main-page">
-    <h1>
-      Welcome to myFlix!
-    </h1>
-    <button
-      mat-raised-button
-      (click)="openUserRegistrationDialog()"
-      style="margin-right: 10px;"
-      color="primary"
-    >
-      Sign Up
-    </button>
-    <button
-      mat-raised-button
-      color="primary"
-      (click)="openUserLoginDialog()"
-      style="margin-right: 10px;"
-    >
-      Login
-    </button>
+  <div class="nav-container">
+
+    <div mat-button class="logo" routerLink="/movies">
+      myMovies
+    </div>
+    <div style=" justify-self: flex-end;">
+      <button mat-button class="nav-button" routerLink='/profile'>
+      Profile
+      </button>
+      <button mat-button class="nav-button" routerLink='/movies'>
+        All Movies
+      </button>
+    </div>
   </div>
+  <div style="padding: 50px; ; text-align: center;">
+
+  <h1>
+    Welcome to myFlix!
+  </h1>
+  <button
+    mat-raised-button
+    (click)="openUserRegistrationDialog()"
+    style="margin-right: 10px;"
+    color="primary"
+  >
+    Sign Up
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="openUserLoginDialog()"
+    style="margin-right: 10px;"
+  >
+    Login
+  </button>
+</div>
