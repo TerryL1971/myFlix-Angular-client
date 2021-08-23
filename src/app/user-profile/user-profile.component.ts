@@ -10,16 +10,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.scss']
+  styleUrls: ['./user-profile.component.scss'],
 })
-
-
 export class UserProfileComponent implements OnInit {
   @Input() userData = {
     Username: '',
     Password: '',
     Email: '',
-    Birthday: ''
+    Birthday: '',
   };
 
   user: any = {};
@@ -32,16 +30,15 @@ export class UserProfileComponent implements OnInit {
     public dialog: MatDialog,
     public snackBar: MatSnackBar,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.getUser();
   }
 
-
   openUserUpdateDialog(): void {
     this.dialog.open(UserUpdateFormComponent, {
-      width: '280px'
+      width: '280px',
     });
   }
 
@@ -82,28 +79,29 @@ export class UserProfileComponent implements OnInit {
     }, 2000);
   }
 
-
   deleteUserAccount(): void {
-    this.fetchApiData.deleteUser().subscribe((resp: any) => {
-      // Logic for a successful user login goes here! (To be implemented)
-      // this.dialogRef.close(); // This will close the modal on success!
-      // localStorage.setItem('user', result.user.Username);
-      // localStorage.setItem('token', result.token);
-      // console.log(result);
-      this.snackBar.open('Bye bye!', 'OK', {
-        duration: 2000
-      });
-      this.router.navigate(['movies']);
-    }, (result) => {
-      console.log(result);
-      this.snackBar.open(result, 'OK', {
-        duration: 2000
-      });
-      // Refreshes and redirects to welcome view
-      this.router.navigate(['/welcome']).then(() => {
-        window.location.reload();
-      });
-    });
+    this.fetchApiData.deleteUser().subscribe(
+      (resp: any) => {
+        // Logic for a successful user login goes here! (To be implemented)
+        // this.dialogRef.close(); // This will close the modal on success!
+        // localStorage.setItem('user', result.user.Username);
+        // localStorage.setItem('token', result.token);
+        // console.log(result);
+        this.snackBar.open('Bye bye!', 'OK', {
+          duration: 2000,
+        });
+        this.router.navigate(['movies']);
+      },
+      (result) => {
+        console.log(result);
+        this.snackBar.open(result, 'OK', {
+          duration: 2000,
+        });
+        // Refreshes and redirects to welcome view
+        this.router.navigate(['/welcome']).then(() => {
+          window.location.reload();
+        });
+      }
+    );
   }
-
 }

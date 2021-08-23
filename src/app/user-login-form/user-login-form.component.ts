@@ -4,14 +4,12 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
-
-@Component({ 
+@Component({
   selector: 'app-user-login-form',
   templateUrl: './user-login-form.component.html',
-  styleUrls: ['./user-login-form.component.scss']
+  styleUrls: ['./user-login-form.component.scss'],
 })
 export class UserLoginFormComponent implements OnInit {
-
   @Input() userData = {
     Username: '',
     Password: '',
@@ -22,31 +20,31 @@ export class UserLoginFormComponent implements OnInit {
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
     public snackBar: MatSnackBar,
     public router: Router
-  ) { }
+  ) {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 
   // This is the function responsible for sending the form inputs to the backend
   loginUser(): void {
-    this.fetchApiData.userLogin(this.userData).subscribe((result) => {
-      // Logic for a successful user login goes here! (To be implemented)
-      this.dialogRef.close(); // This will close the modal on success!
-      localStorage.setItem('user', result.user.Username);
-      localStorage.setItem('token', result.token);
-      localStorage.setItem('FavoriteMovies', result.user.FavoriteMovies);
-      console.log(result);
-      this.snackBar.open(result, 'OK', {
-        duration: 2000
-      });
-    this.router.navigate(['movies']);
-    }, (result) => {
-      console.log(result);
-      this.snackBar.open(result, 'OK', {
-        duration: 2000
-      });
-    });
+    this.fetchApiData.userLogin(this.userData).subscribe(
+      (result) => {
+        // Logic for a successful user login goes here! (To be implemented)
+        this.dialogRef.close(); // This will close the modal on success!
+        localStorage.setItem('user', result.user.Username);
+        localStorage.setItem('token', result.token);
+        localStorage.setItem('FavoriteMovies', result.user.FavoriteMovies);
+        console.log(result);
+        this.snackBar.open(result, 'OK', {
+          duration: 2000,
+        });
+        this.router.navigate(['movies']);
+      },
+      (result) => {
+        console.log(result);
+        this.snackBar.open(result, 'OK', {
+          duration: 2000,
+        });
+      }
+    );
   }
-  
 }

@@ -11,55 +11,55 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.scss']
+  styleUrls: ['./movie-card.component.scss'],
 })
 export class MovieCardComponent {
   movies: any[] = [];
   FavoriteMovies: any = {};
 
-constructor(
-  public fetchApiData: FetchApiDataService,
-  public dialog: MatDialog,
-  public snackBar: MatSnackBar
-) { }
+  constructor(
+    public fetchApiData: FetchApiDataService,
+    public dialog: MatDialog,
+    public snackBar: MatSnackBar
+  ) {}
 
-ngOnInit(): void {
-  this.getMovies();
-  this.getFavorites();
-}
+  ngOnInit(): void {
+    this.getMovies();
+    this.getFavorites();
+  }
 
-// Gets Movie API
-getMovies(): void {
-  this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-    this.movies = resp;
-    console.log(this.movies);
-    return this.movies;
-  });
-}
-//open movie details
-openGenreViewDialog(name: string, description: string): void {
-  this.dialog.open(GenreViewComponent, {
-    data: { name, description },
-    width: '300px',
-  });
-}
+  // Gets Movie API
+  getMovies(): void {
+    this.fetchApiData.getAllMovies().subscribe((resp: any) => {
+      this.movies = resp;
+      console.log(this.movies);
+      return this.movies;
+    });
+  }
+  //open movie details
+  openGenreViewDialog(name: string, description: string): void {
+    this.dialog.open(GenreViewComponent, {
+      data: { name, description },
+      width: '300px',
+    });
+  }
 
-//open movie details
-openDirectorViewDialog(name: string, bio: string, image: string): void {
-  this.dialog.open(DirectorViewComponent, {
-    data: { name, bio, image },
-    width: '300px',
-  });
-}
+  //open movie details
+  openDirectorViewDialog(name: string, bio: string, image: string): void {
+    this.dialog.open(DirectorViewComponent, {
+      data: { name, bio, image },
+      width: '300px',
+    });
+  }
 
-//open movie description
-openMovieDescriptionViewDialog(description: string): void {
-  this.dialog.open(MovieDescriptionViewComponent, {
-    data: { description },
-    width: '300px',
-  });
-}
- getFavorites(): void {
+  //open movie description
+  openMovieDescriptionViewDialog(description: string): void {
+    this.dialog.open(MovieDescriptionViewComponent, {
+      data: { description },
+      width: '300px',
+    });
+  }
+  getFavorites(): void {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUser(user).subscribe((resp: any) => {
       this.FavoriteMovies = resp.FavoriteMovies;
@@ -73,16 +73,16 @@ openMovieDescriptionViewDialog(description: string): void {
         duration: 2000,
       });
       console.log(this.FavoriteMovies);
-    this.FavoriteMovies = resp.FavoriteMovies;
+      this.FavoriteMovies = resp.FavoriteMovies;
     });
     return this.FavoriteMovies.push(movieId);
-  } 
+  }
 
   isFavorite(movieID: string) {
     return this.FavoriteMovies.includes(movieID);
   }
 
-/*  addToFavorites(movieId: string): any {
+  /*  addToFavorites(movieId: string): any {
     if (this.isFavorite(movieId)) {
       this.fetchApiData.removeFavorite(movieId).subscribe((resp: any) => {
         this.snackBar.open('Removed from favorites!', 'OK', {
@@ -103,5 +103,4 @@ openMovieDescriptionViewDialog(description: string): void {
     console.log('3 - after all', this.FavoriteMovies);
     return this.FavoriteMovies.push(movieId);
   } */
-
 }

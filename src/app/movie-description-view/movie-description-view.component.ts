@@ -10,18 +10,15 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-movie-description-view',
   templateUrl: './movie-description-view.component.html',
-  styleUrls: ['./movie-description-view.component.scss']
+  styleUrls: ['./movie-description-view.component.scss'],
 })
 export class MovieDescriptionViewComponent implements OnInit {
-
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
       description: string;
     }
-  ) { }
+  ) {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
