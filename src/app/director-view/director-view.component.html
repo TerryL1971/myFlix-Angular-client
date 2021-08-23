@@ -1,12 +1,11 @@
 <mat-card class="director-details">
+    <mat-card-header class="mat-dialog-title">
+        <mat-card-title>{{ director.name }}</mat-card-title>
+    </mat-card-header>
 
-  <mat-card-header class="mat-dialog-title">
-    <mat-card-title>{{ director.name }}</mat-card-title>
-  </mat-card-header>
-
-  <div class="dialog-content">
-    <mat-dialog-content class="dialog-text">{{ director.bio }}</mat-dialog-content>
-    <!-- <img src={{ director.image }} alt={{ director.name }} /> -->
-  </div>
-
+    <div class="dialog-content">
+        <mat-dialog-content class="dialog-text">{{ director.bio }}
+        </mat-dialog-content>
+        <!-- <img src={{ director.image }} alt={{ director.name }} /> -->
+    </div>
 </mat-card>
