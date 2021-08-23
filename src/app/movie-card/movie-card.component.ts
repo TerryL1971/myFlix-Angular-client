@@ -36,7 +36,8 @@ export class MovieCardComponent {
       return this.movies;
     });
   }
-  //open movie details
+
+  //open genre details
   openGenreViewDialog(name: string, description: string): void {
     this.dialog.open(GenreViewComponent, {
       data: { name, description },
@@ -81,5 +82,4 @@ export class MovieCardComponent {
   isFavorite(movieID: string) {
     return this.FavoriteMovies.includes(movieID);
   }
-
 }
