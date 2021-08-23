@@ -66,8 +66,8 @@ openMovieDescriptionViewDialog(description: string): void {
     });
   }
 
-/*  addToFavorites(movieId: string): any {
-    // const FavoriteMovies = localStorage.getItem('FavoriteMovies');
+  addToFavorites(movieId: string): any {
+    const FavoriteMovies = localStorage.getItem('FavoriteMovies');
     this.fetchApiData.addFavorite(movieId).subscribe((resp: any) => {
       this.snackBar.open('Added to favorites!', 'OK', {
         duration: 2000,
@@ -76,13 +76,13 @@ openMovieDescriptionViewDialog(description: string): void {
     this.FavoriteMovies = resp.FavoriteMovies;
     });
     return this.FavoriteMovies.push(movieId);
-  } */
+  } 
 
   isFavorite(movieID: string) {
     return this.FavoriteMovies.includes(movieID);
   }
 
-  addToFavorites(movieId: string): any {
+/*  addToFavorites(movieId: string): any {
     if (this.isFavorite(movieId)) {
       this.fetchApiData.removeFavorite(movieId).subscribe((resp: any) => {
         this.snackBar.open('Removed from favorites!', 'OK', {
@@ -102,6 +102,6 @@ openMovieDescriptionViewDialog(description: string): void {
     }
     console.log('3 - after all', this.FavoriteMovies);
     return this.FavoriteMovies.push(movieId);
-  }
+  } */
 
 }
