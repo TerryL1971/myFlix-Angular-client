@@ -36,19 +36,18 @@ export class MovieCardComponent {
       return this.movies;
     });
   }
-  //open movie details
+
+  //open genre details
   openGenreViewDialog(name: string, description: string): void {
     this.dialog.open(GenreViewComponent, {
       data: { name, description },
-      width: '300px',
     });
   }
 
-  //open movie details
+  //open director details
   openDirectorViewDialog(name: string, bio: string, image: string): void {
     this.dialog.open(DirectorViewComponent, {
       data: { name, bio, image },
-      width: '300px',
     });
   }
 
@@ -66,17 +65,18 @@ export class MovieCardComponent {
     });
   }
 
-  addToFavorites(movieId: string): any {
-    const FavoriteMovies = localStorage.getItem('FavoriteMovies');
+   addToFavorites(movieId: string): any {
+    // const FavoriteMovies = localStorage.getItem('FavoriteMovies');
     this.fetchApiData.addFavorite(movieId).subscribe((resp: any) => {
       this.snackBar.open('Added to favorites!', 'OK', {
         duration: 2000,
       });
       console.log(this.FavoriteMovies);
-      this.FavoriteMovies = resp.FavoriteMovies;
+    this.FavoriteMovies = resp.FavoriteMovies;
     });
     return this.FavoriteMovies.push(movieId);
   }
+
 
   isFavorite(movieID: string) {
     return this.FavoriteMovies.includes(movieID);
