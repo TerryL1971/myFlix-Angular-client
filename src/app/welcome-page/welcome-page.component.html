@@ -11,12 +11,19 @@
             <div class="logo" mat-button="" routerlink="/movies">
                 myMovies
             </div>
-            <div style="justify-self: flex-end;">
-                <button class="nav-button" mat-button="" routerlink='/profile'>Profile</button> <button class="nav-button" mat-button="" routerlink='/movies'>All Movies</button>
+            <div style="justify-self: flex-end">
+                <button class="nav-button" mat-button="" routerlink="/profile">Profile</button> <button class="nav-button" mat-button="" routerlink="/movies">All Movies</button>
             </div>
         </div>
-        <div style="padding: 50px; ; text-align: center;">
-            <h1>Welcome to myFlix!</h1><button color="primary" mat-raised-button="" style="margin-right: 10px;">Sign Up</button> <button color="primary" mat-raised-button="" style="margin-right: 10px;">Login</button>
+        <div style="padding: 50px; text-align: center">
+            <!-- Adding the click event on the signup button -->
+            <button mat-raised-button (click)="openUserRegistrationDialog()" style="margin: 10px;" color="primary">
+                Sign Up
+            </button>
+            <!-- Adding the click event on the login button -->
+            <button mat-raised-button (click)="openUserLoginDialog()" style="margin: 10px;" color="primary">
+                Login
+        </button>
         </div>
     </div>
 </body>
