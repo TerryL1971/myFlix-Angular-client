@@ -28,7 +28,6 @@ import { UserUpdateFormComponent } from './user-update-form/user-update-form.com
 import { NavigationComponent } from './navigation/navigation.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
-
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
@@ -37,15 +36,18 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ 
-    AppComponent, 
-    UserRegistrationFormComponent, 
-    UserLoginFormComponent, 
-    MovieCardComponent, 
-    WelcomePageComponent, 
-    GenreViewComponent, 
-    DirectorViewComponent, 
-    MovieDescriptionViewComponent, UserUpdateFormComponent, NavigationComponent, UserProfileComponent
+  declarations: [
+    AppComponent,
+    UserRegistrationFormComponent,
+    UserLoginFormComponent,
+    MovieCardComponent,
+    WelcomePageComponent,
+    GenreViewComponent,
+    DirectorViewComponent,
+    MovieDescriptionViewComponent,
+    UserUpdateFormComponent,
+    NavigationComponent,
+    UserProfileComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -61,9 +63,9 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatSnackBarModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
