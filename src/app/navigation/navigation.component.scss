@@ -1,0 +1,19 @@
+.logo {
+    margin: 0;
+    text-align: left;
+    font-size: x-large;
+    padding: 15px;
+}
+
+.nav-button {
+    justify-self: flex-end;
+    margin: 5px;
+    text-align: center;
+    padding: 2px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: left;
+    padding: 20px;
+}
