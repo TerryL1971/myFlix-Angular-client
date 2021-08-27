@@ -12,6 +12,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UserUpdateFormComponent implements OnInit {
   @Input() userData = {
+    //@ = decorator that defines the component’s input
+    //user Data object will be passed to the API call in the registerUser function
     Username: '',
     Password: '',
     Email: '',
