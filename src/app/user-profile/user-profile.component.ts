@@ -13,6 +13,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent implements OnInit {
+  //@ = decorator that defines the component’s input
+  //user Data object will be passed to the API call in the registerUser function
+
   @Input() userData = {
     Username: '',
     Password: '',
@@ -36,6 +39,7 @@ export class UserProfileComponent implements OnInit {
     this.getUser();
   }
 
+  // Assigning the dialog a width
   openUserUpdateDialog(): void {
     this.dialog.open(UserUpdateFormComponent, {
       width: '280px',
