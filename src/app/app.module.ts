@@ -1,9 +1,17 @@
+/**
+* "app.module.ts" file is the entry point of your Angular app, 
+* meaning that it's mostly used to wire up different modules together 
+* and express dependencies.
+*/
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// simplified API for Angular applications that makes it possible for the 
+// client app to communicate with the API or server-side
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -28,6 +36,7 @@ import { UserUpdateFormComponent } from './user-update-form/user-update-form.com
 import { NavigationComponent } from './navigation/navigation.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
+//defining a welcome route that'll point to components
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
