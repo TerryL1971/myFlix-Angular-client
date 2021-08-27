@@ -45,7 +45,7 @@
 
 ### Kanban Board:
 
-The development of this application was organized through a Kanban board. You can see the board by [following this link](https://trello.com/b/RlvbRFix/project-achievement-6-myvhs-a).
+The development of this application was organized through a Kanban board. You can see the board by [following this link](https://trello.com/invite/b/QomIFB8C/d3499cb332a3c336e56e956ec1698144/achievement-6-project-angular-app-myflix).
 
 <br>
 
@@ -108,7 +108,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 <!-- SERVER-SIDE -->
 ## Server-side
 
-To see the Server-side of the app, please check [this repository](https://github.com/gregoriodelasheras/myvhs-server).
+To see the Server-side of the app, please check [this repository](https://terryl1971.github.io/myFlix-Angular-client/welcome).
 
 <br>
 
@@ -122,9 +122,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Francisco Gregorio de las Heras: [LinkedIn](https://www.linkedin.com/in/francisco-gregorio-de-las-heras/)
+Terrell C Lombardi: [LinkedIn](https://www.linkedin.com/in/terry-c-lombardi/)
 
-Project Link: [https://herasdev.com/myvhs-client-a/](https://herasdev.com/myvhs-client-a/)
+
 
 <br>
 
@@ -132,6 +132,3 @@ Project Link: [https://herasdev.com/myvhs-client-a/](https://herasdev.com/myvhs-
 ## Acknowledgements
 
 This project was done as part of [CareerFoundry's Full-Stack Web Development Program](https://careerfoundry.com/en/courses/become-a-web-developer/) (Project 6 - Angular App).
-
-- Project tutor: [Itua Akhator](https://github.com/iakhator)
-- Project mentor: [Vinh-Tuong Mai](https://github.com/mvtuong)
