@@ -19,7 +19,7 @@
 
 ### Objective:
 
-- Build a web application that provides users with access to information about different movies, genres, directors and actors of the 1980s. Users are able to register, update their personal information, deregister and create a list of "Favorites" and "To Watch" movies.
+- Build a web application that provides users with access to information about different movies, genres, directors and actors. Users are able to register, update their personal information, deregister and create a list of "Favorites" and "To Watch" movies.
 
 ### User Stories:
 
@@ -32,7 +32,7 @@
 
 ### Key Features:
 
-- Return a list of movies of the 80's to the user.
+- Return a list of movies to the user.
 - Return data about a single movie by title to the user.
 - Return data about movie genres to the user.
 - Return data about directors and actors to the user.
