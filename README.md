@@ -1,12 +1,16 @@
 Objective
+
 Using Angular, build the client-side for an application called myFlix based on its existing server-side code (REST API and database), with supporting documentation.
 
 Technologies
+
 Node.js
 Angular
 Angular Material
 RxJS
+
 Features
+
 Fetches list of all movies and their related details from database and display to users.
 Allows users to filter movies via search bar.
 Allows users select a movie to view details relating to the selected movie.
@@ -16,7 +20,9 @@ Fetches data about a director of listed movies.
 Allows users to update their user info.
 Allows existing users to delete their account.
 Allows users add of remove movies from their favorites.
+
 Technical-Specks
+
 Application is a Single Page Application (SPA).
 Application Angular router to navigate between views.
 Application was writtern using the Angular framework.
