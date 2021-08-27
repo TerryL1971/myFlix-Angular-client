@@ -17,17 +17,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/77192223/127869044-bbd84580-4d64-4a3c-bfc4-14ec062f5e6f.png" alt="App Screenshot">
-</p>
-
 ### Objective:
 
 - Build a web application that provides users with access to information about different movies, genres, directors and actors of the 1980s. Users are able to register, update their personal information, deregister and create a list of "Favorites" and "To Watch" movies.
 
 ### User Stories:
 
-- As a user, I want to be able to receive information on movies, genres, directors and actors of the 1980s so that I can learn more about movies I’ve watched or am interested in.
+- As a user, I want to be able to receive information on movies, genres, directors and actors so that I can learn more about movies I’ve watched or am interested in.
 - As a user, I want to have a "Favorites" list and a "To Watch" list, and add and remove movies from them.
 - As a user, I want to access a simple web application with a minimalist interface, displaying only essential information.
 - As a user, I want to be able to create a profile so I can save data about my favorite movies.
