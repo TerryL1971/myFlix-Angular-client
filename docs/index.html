@@ -58,59 +58,149 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<p>Objective
-				Using Angular, build the client-side for an application called myFlix based on its existing server-side code (REST API and database), with supporting documentation.</p>
-				<p>Technologies
-					Node.js
-					Angular
-					Angular Material
-					RxJS
-					Features
-					Fetches list of all movies and their related details from database and display to users.
-					Allows users to filter movies via search bar.
-					Allows users select a movie to view details relating to the selected movie.
-					Allows registration and login.
-					Fetches data about a genre, with a name and description.
-					Fetches data about a director of listed movies.
-					Allows users to update their user info.
-					Allows existing users to delete their account.
-					Allows users add of remove movies from their favorites.
-					Technical-Specks
-					Application is a Single Page Application (SPA).
-					Application Angular router to navigate between views.
-					Application was writtern using the Angular framework.
-					Application was styled with bootstrap and Angular-marterial UI components.
-					Application is host on gh-pages.
-					Build Instructions
-				Development server</p>
-				<a href="#myflixangularclient" id="myflixangularclient" style="color: inherit; text-decoration: none;">
-					<h1>MyFlixAngularClient</h1>
+				<!-- TABLE OF CONTENTS -->
+				<details open="open">
+					<summary>Table of Contents</summary>
+					<ol>
+						<li><a href="#about-the-project">About The Project</a></li>
+						<li><a href="#built-with">Built With</a></li>
+						<li><a href="#get-started">Get Started</a></li>
+						<li><a href="#server-side">Server-side</a></li>
+						<li><a href="#license">License</a></li>
+						<li><a href="#contact">Contact</a></li>
+						<li><a href="#acknowledgements">Acknowledgements</a></li>
+					</ol>
+				</details>
+				<br>
+				<!-- ABOUT THE PROJECT -->
+				<a href="#about-the-project" id="about-the-project" style="color: inherit; text-decoration: none;">
+					<h2>About The Project</h2>
 				</a>
-				<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 12.2.0.</p>
+				<a href="#objective" id="objective" style="color: inherit; text-decoration: none;">
+					<h3>Objective:</h3>
+				</a>
+				<ul>
+					<li>Build a web application that provides users with access to information about different movies, genres, directors and actors of the 1980s. Users are able to register, update their personal information, deregister and create a list of &quot;Favorites&quot; and &quot;To Watch&quot; movies.</li>
+				</ul>
+				<a href="#user-stories" id="user-stories" style="color: inherit; text-decoration: none;">
+					<h3>User Stories:</h3>
+				</a>
+				<ul>
+					<li>As a user, I want to be able to receive information on movies, genres, directors and actors so that I can learn more about movies I’ve watched or am interested in.</li>
+					<li>As a user, I want to have a &quot;Favorites&quot; list and a &quot;To Watch&quot; list, and add and remove movies from them.</li>
+					<li>As a user, I want to access a simple web application with a minimalist interface, displaying only essential information.</li>
+					<li>As a user, I want to be able to create a profile so I can save data about my favorite movies.</li>
+					<li>As a user, I want to be able to update my personal data.</li>
+					<li>As a user, I want to be able to deregister my profile from the web application database.</li>
+				</ul>
+				<a href="#key-features" id="key-features" style="color: inherit; text-decoration: none;">
+					<h3>Key Features:</h3>
+				</a>
+				<ul>
+					<li>Return a list of movies of the 80&#39;s to the user.</li>
+					<li>Return data about a single movie by title to the user.</li>
+					<li>Return data about movie genres to the user.</li>
+					<li>Return data about directors and actors to the user.</li>
+					<li>Allow new users to register.</li>
+					<li>Allow users to update their data by username.</li>
+					<li>Allow existing users to deregister by username.</li>
+					<li>Allow users to add and remove movies to their &quot;Favorites&quot; list by movie ID.</li>
+					<li>Allow users to add and remove movies to their &quot;To Watch&quot; list by movie ID.</li>
+					<li>Secure access to the API data: authentication and authorization with HTTP and JSON Web Token.</li>
+				</ul>
+				<a href="#kanban-board" id="kanban-board" style="color: inherit; text-decoration: none;">
+					<h3>Kanban Board:</h3>
+				</a>
+				<p>The development of this application was organized through a Kanban board. You can see the board by <a href="https://trello.com/b/RlvbRFix/project-achievement-6-myvhs-a">following this link</a>.</p>
+				<br>
+				<!-- BUILT WITH -->
+				<a href="#built-with" id="built-with" style="color: inherit; text-decoration: none;">
+					<h2>Built With</h2>
+				</a>
+				<ul>
+					<li><a href="https://angular.io/">Angular</a></li>
+					<li><a href="https://material.angular.io/">Angular Material</a></li>
+					<li><a href="https://pages.github.com/">GitHub Pages</a></li>
+					<li><a href="https://www.javascript.com/">JavaScript</a></li>
+					<li><a href="https://nodejs.org/">Node.js</a></li>
+					<li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+				</ul>
+				<a href="#dependencies" id="dependencies" style="color: inherit; text-decoration: none;">
+					<h3>Dependencies</h3>
+				</a>
+				<ul>
+					<li>@angular</li>
+				</ul>
+				<a href="#dev-dependencies" id="dev-dependencies" style="color: inherit; text-decoration: none;">
+					<h3>Dev Dependencies</h3>
+				</a>
+				<ul>
+					<li>angular-cli-ghpages</li>
+					<li>eslint</li>
+					<li>jasmine-core</li>
+					<li>karma</li>
+					<li>typedoc</li>
+					<li>typescript</li>
+				</ul>
+				<br>
+				<!-- GET STARTED -->
+				<a href="#get-started" id="get-started" style="color: inherit; text-decoration: none;">
+					<h2>Get Started</h2>
+				</a>
+				<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 12.1.2.</p>
 				<a href="#development-server" id="development-server" style="color: inherit; text-decoration: none;">
-					<h2>Development server</h2>
+					<h3>Development server</h3>
 				</a>
 				<p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>
 				<a href="#code-scaffolding" id="code-scaffolding" style="color: inherit; text-decoration: none;">
-					<h2>Code scaffolding</h2>
+					<h3>Code scaffolding</h3>
 				</a>
 				<p>Run <code>ng generate component component-name</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
 				<a href="#build" id="build" style="color: inherit; text-decoration: none;">
-					<h2>Build</h2>
+					<h3>Build</h3>
 				</a>
 				<p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory.</p>
 				<a href="#running-unit-tests" id="running-unit-tests" style="color: inherit; text-decoration: none;">
-					<h2>Running unit tests</h2>
+					<h3>Running unit tests</h3>
 				</a>
 				<p>Run <code>ng test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>.</p>
 				<a href="#running-end-to-end-tests" id="running-end-to-end-tests" style="color: inherit; text-decoration: none;">
-					<h2>Running end-to-end tests</h2>
+					<h3>Running end-to-end tests</h3>
 				</a>
 				<p>Run <code>ng e2e</code> to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.</p>
 				<a href="#further-help" id="further-help" style="color: inherit; text-decoration: none;">
-					<h2>Further help</h2>
+					<h3>Further help</h3>
 				</a>
 				<p>To get more help on the Angular CLI use <code>ng help</code> or go check out the <a href="https://angular.io/cli">Angular CLI Overview and Command Reference</a> page.</p>
+				<br>
+				<!-- SERVER-SIDE -->
+				<a href="#server-side" id="server-side" style="color: inherit; text-decoration: none;">
+					<h2>Server-side</h2>
+				</a>
+				<p>To see the Server-side of the app, please check <a href="https://github.com/gregoriodelasheras/myvhs-server">this repository</a>.</p>
+				<br>
+				<!-- LICENSE -->
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p>Distributed under the MIT License. See <code>LICENSE</code> for more information.</p>
+				<br>
+				<!-- CONTACT -->
+				<a href="#contact" id="contact" style="color: inherit; text-decoration: none;">
+					<h2>Contact</h2>
+				</a>
+				<p>Francisco Gregorio de las Heras: <a href="https://www.linkedin.com/in/francisco-gregorio-de-las-heras/">LinkedIn</a></p>
+				<p>Project Link: <a href="https://herasdev.com/myvhs-client-a/">https://herasdev.com/myvhs-client-a/</a></p>
+				<br>
+				<!-- ACKNOWLEDGEMENTS -->
+				<a href="#acknowledgements" id="acknowledgements" style="color: inherit; text-decoration: none;">
+					<h2>Acknowledgements</h2>
+				</a>
+				<p>This project was done as part of <a href="https://careerfoundry.com/en/courses/become-a-web-developer/">CareerFoundry&#39;s Full-Stack Web Development Program</a> (Project 6 - Angular App).</p>
+				<ul>
+					<li>Project tutor: <a href="https://github.com/iakhator">Itua Akhator</a></li>
+					<li>Project mentor: <a href="https://github.com/mvtuong">Vinh-Tuong Mai</a></li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
