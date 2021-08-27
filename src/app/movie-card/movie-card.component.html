@@ -2,6 +2,8 @@
 
 <div style="display: flex">
 
+    <!-- use ngFor directive to display all movies -->
+    <!-- 'movies' refers to the variable declared in the component file -->
     <mat-card *ngFor="let movie of movies; let i=index;">
         <mat-dialog-content>
             <mat-card-title>{{movie.Title}}</mat-card-title>
