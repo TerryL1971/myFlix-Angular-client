@@ -4,6 +4,8 @@
     </mat-card-header>
     <mat-card-content>
         <form>
+            <!-- ngModel directive binds the inputs by the user to the userData object -->
+            <!-- matInput -->
             <mat-form-field>
                 <input [(ngModel)]="userData.Username" class="custom-form-field" placeholder="Username" type="text" name="Username" required>
             </mat-form-field>
