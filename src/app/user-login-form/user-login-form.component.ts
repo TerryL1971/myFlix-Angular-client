@@ -5,12 +5,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
+  //@ = decorator to tell Angular that the class right below is a component
+  //selector defines the custom HTML element, into which this component will render
   selector: 'app-user-login-form',
   templateUrl: './user-login-form.component.html',
   styleUrls: ['./user-login-form.component.scss'],
 })
 export class UserLoginFormComponent implements OnInit {
   @Input() userData = {
+    //@ = decorator that defines the component’s input
+    //user Data object will be passed to the API call in the loginUser function
     Username: '',
     Password: '',
   };
