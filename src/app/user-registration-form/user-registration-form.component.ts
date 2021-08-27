@@ -4,12 +4,18 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
+  //@ = decorator to tell Angular that the class right below is a component
+  //selector defines the custom HTML element, into which this component will render
   selector: 'app-user-registration-form',
+  //instructions for wiring up the class with its stylesheet and template file
   templateUrl: './user-registration-form.component.html',
   styleUrls: ['./user-registration-form.component.scss'],
 })
 export class UserRegistrationFormComponent implements OnInit {
+  
   @Input() userData = {
+    //@ = decorator that defines the component’s input
+    //user Data object will be passed to the API call in the registerUser function
     Username: '',
     Password: '',
     Email: '',
