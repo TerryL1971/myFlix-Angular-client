@@ -8,7 +8,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-
+  /**
+   * 
+   * @param snackBar 
+   */
   constructor(
     public snackBar: MatSnackBar
   ) { }
