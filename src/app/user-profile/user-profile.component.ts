@@ -27,7 +27,14 @@ export class UserProfileComponent implements OnInit {
   movies: any = [];
   FavoriteMovies: any = {};
   favorites: any = [];
-
+  
+  /**
+   * 
+   * @param fetchApiData 
+   * @param dialog 
+   * @param snackBar 
+   * @param router 
+   */
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
@@ -39,13 +46,18 @@ export class UserProfileComponent implements OnInit {
     this.getUser();
   }
 
-  // Assigning the dialog a width
+  /**
+   * Assigning the dialog a width
+   */
   openUserUpdateDialog(): void {
     this.dialog.open(UserUpdateFormComponent, {
       width: '280px',
     });
   }
-
+  
+  /**
+   * This function gets the User Data
+   */
   getUser(): void {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUser(user).subscribe((res: any) => {
@@ -54,6 +66,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * This function gets all Movies
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((res: any) => {
       this.movies = res;
@@ -61,6 +76,10 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Filters movis by users input
+   * @returns 
+   */
   filterFavorites(): void {
     this.movies.forEach((movie: any) => {
       if (this.user.FavoriteMovies.includes(movie._id)) {
@@ -70,6 +89,10 @@ export class UserProfileComponent implements OnInit {
     return this.favorites;
   }
 
+  /**
+   * This deletes a movie in the Favorites array
+   * @param movieId 
+   */
   deleteFavorite(movieId: string): void {
     this.fetchApiData.removeFavorite(movieId).subscribe((resp: any) => {
       this.snackBar.open('Removed from list!', 'OK', {
@@ -82,7 +105,11 @@ export class UserProfileComponent implements OnInit {
       window.location.reload();
     }, 2000);
   }
-
+  
+  /**
+   * Deletes the User's Account
+   * @param snackBar
+   */
   deleteUserAccount(): void {
     this.fetchApiData.deleteUser().subscribe(
       (resp: any) => {
