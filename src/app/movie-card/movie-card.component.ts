@@ -18,6 +18,11 @@ export class MovieCardComponent {
   movies: any[] = [];
   FavoriteMovies: any = {};
 
+  /**
+   * @param apiApi 
+   * @param snackBar 
+   * @param dialog 
+   */
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
@@ -32,6 +37,10 @@ export class MovieCardComponent {
   }
 
   // Gets Movie API
+  /**
+   * This function fetches all movies from the API
+   * @returns
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -41,6 +50,11 @@ export class MovieCardComponent {
   }
 
   //open genre details
+  /**
+   * This function returns the Genre Details
+   * @param name
+   * @param description
+   */
   openGenreViewDialog(name: string, description: string): void {
     this.dialog.open(GenreViewComponent, {
       data: { name, description },
@@ -48,6 +62,12 @@ export class MovieCardComponent {
   }
 
   //open director details
+  /**
+   * 
+   * @param name 
+   * @param bio 
+   * @param image 
+   */
   openDirectorViewDialog(name: string, bio: string, image: string): void {
     this.dialog.open(DirectorViewComponent, {
       data: { name, bio, image },
@@ -55,6 +75,10 @@ export class MovieCardComponent {
   }
 
   //open movie description
+  /**
+   * 
+   * @param description 
+   */
   openMovieDescriptionViewDialog(description: string): void {
     this.dialog.open(MovieDescriptionViewComponent, {
       data: { description },
