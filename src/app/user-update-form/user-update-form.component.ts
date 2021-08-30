@@ -20,6 +20,12 @@ export class UserUpdateFormComponent implements OnInit {
     Birthday: '',
   };
 
+  /**
+   * 
+   * @param fetchApiData 
+   * @param dialogRef 
+   * @param snackBar 
+   */
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserUpdateFormComponent>,
@@ -28,7 +34,9 @@ export class UserUpdateFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // This is the function responsible for sending the form inputs to the backend
+  /**
+   * This is the function responsible for sending the form inputs to the backend
+   */
   updateUser(): void {
     this.fetchApiData.updateUser(this.userData).subscribe(
       (result) => {
