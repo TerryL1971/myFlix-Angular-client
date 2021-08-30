@@ -17,6 +17,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+![myFlix-Angular-client](./src/img/myFlix-Angular.gif)
+
 ### Objective:
 
 - Build a web application that provides users with access to information about different movies, genres, directors and actors. Users are able to register, update their personal information, deregister and create a list of "Favorites" and "To Watch" movies.
